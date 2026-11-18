@@ -1,0 +1,900 @@
+<div id="cubica-configurator">
+
+<div class="loading" id="ccLoading">Загрузка 3D…</div>
+
+<button class="settings-toggle glass" id="ccSettingsToggle" aria-label="Настройки">⚙ Настройки</button>
+<div class="settings-backdrop" id="ccBackdrop"></div>
+<button class="cam-reset glass" id="ccCamReset">↻ Сброс вида</button>
+
+<div class="mobile-sliders glass" id="ccMobileSliders"></div>
+
+<div class="watermarks" aria-hidden="true">
+  <span style="top:6%;left:4%;">Cubica.by</span>
+  <span style="top:22%;left:28%;">Cubica.by</span>
+  <span style="top:8%;left:52%;">Cubica.by</span>
+  <span style="top:38%;left:14%;">Cubica.by</span>
+  <span style="top:30%;left:72%;">Cubica.by</span>
+  <span style="top:52%;left:44%;">Cubica.by</span>
+  <span style="top:60%;left:8%;">Cubica.by</span>
+  <span style="top:68%;left:64%;">Cubica.by</span>
+  <span style="top:80%;left:24%;">Cubica.by</span>
+  <span style="top:86%;left:56%;">Cubica.by</span>
+  <span style="top:74%;left:84%;">Cubica.by</span>
+</div>
+
+<div class="legend glass">
+  <div class="legend-row">
+    <span class="legend-swatch" id="ccLegendRail"></span>Куборейка (П-профиль)
+  </div>
+  <div class="legend-row">
+    <span class="legend-swatch" style="background:#8a97a6"></span>Стрингер + отгибаемые фиксаторы
+  </div>
+  <div class="legend-row">
+    <span class="legend-swatch" style="background:#3a4048"></span>Шпилька с резьбой
+  </div>
+  <div class="legend-row">
+    <span class="legend-swatch" style="background:#a8b0ba"></span>Болты крепления
+  </div>
+  <div class="legend-row">
+    <span class="legend-swatch" style="background:#c9a961"></span>Анкер-дюбель
+  </div>
+</div>
+
+<div class="mini-frame" id="ccMiniFrame">
+  <div class="mini-title">Как работает фиксатор</div>
+  <div class="mini-label" id="ccMiniLabel">Сборка</div>
+</div>
+
+<div class="settings glass" id="ccSettings">
+  <div id="ccSliderSections">
+    <div class="settings-section">
+      <div class="settings-title">
+        <span>Ширина рейки</span>
+        <span class="val" id="ccWidthVal">50 мм</span>
+      </div>
+      <input type="range" id="ccWidth" min="30" max="150" step="10" value="50">
+    </div>
+    <div class="settings-section">
+      <div class="settings-title">
+        <span>Высота рейки</span>
+        <span class="val" id="ccHeightVal">50 мм</span>
+      </div>
+      <input type="range" id="ccHeight" min="30" max="200" step="10" value="50">
+    </div>
+    <div class="settings-section">
+      <div class="settings-title">
+        <span>Шаг между рейками</span>
+        <span class="val" id="ccGapVal">40 мм</span>
+      </div>
+      <input type="range" id="ccGap" min="20" max="300" step="10" value="40">
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <button class="caps-btn" id="ccCapsBtn">
+      <span>Заглушки</span>
+      <span class="caps-indicator"></span>
+    </button>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-title"><span>Цвет</span></div>
+    <div class="swatches" id="ccColorGrid">
+      <div class="swatch-wrap">
+        <button class="swatch" data-color="0xecece7" style="background:#ecece7"></button>
+        <div class="swatch-label">RAL 9003</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-color="0xa5a8a9" style="background:#a5a8a9"></button>
+        <div class="swatch-label">RAL 9006</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-color="0x474b4e" style="background:#474b4e"></button>
+        <div class="swatch-label">RAL 7024</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-color="0x0a0a0a" style="background:#0a0a0a"></button>
+        <div class="swatch-label">RAL 9005</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-title"><span>Дерево Cubica</span></div>
+    <div class="swatches" id="ccWoodGrid">
+      <div class="swatch-wrap">
+        <button class="swatch active" data-wood="denver"></button>
+        <div class="swatch-label">Denver</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="wellington"></button>
+        <div class="swatch-label">Wellington</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="tokyo"></button>
+        <div class="swatch-label">Tokyo</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="toronto"></button>
+        <div class="swatch-label">Toronto</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="vancouver"></button>
+        <div class="swatch-label">Vancouver</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="rio"></button>
+        <div class="swatch-label">Rio</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="stockholm"></button>
+        <div class="swatch-label">Stockholm</div>
+      </div>
+      <div class="swatch-wrap">
+        <button class="swatch" data-wood="sydney"></button>
+        <div class="swatch-label">Sydney</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hint glass">Потяните мышью — поворот · Колесо — масштаб</div>
+
+<div class="anim-ctrl glass">
+  <button class="anim-btn active" data-mode="auto">Авто</button>
+  <button class="anim-btn" data-mode="assemble">Собрать</button>
+  <button class="anim-btn" data-mode="disassemble">Разобрать</button>
+  <button class="anim-btn" id="ccPauseBtn">⏸</button>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+'use strict';
+
+var CSS = ''
++'#cubica-configurator *{margin:0;padding:0;box-sizing:border-box;}'
++'#cubica-configurator{position:relative;width:100%;height:720px;overflow:hidden;background:#dde4ec;border-radius:16px;font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#161a1f;-webkit-font-smoothing:antialiased;}'
++'#cubica-configurator canvas{display:block;width:100%;height:100%;touch-action:none;}'
++'#cubica-configurator .glass{background:rgba(255,255,255,.85);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,255,255,.9);box-shadow:0 10px 40px -12px rgba(20,25,35,.18);border-radius:14px;}'
++'#cubica-configurator .settings-toggle{display:none;position:absolute;top:16px;right:16px;padding:12px 18px;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;color:#161a1f;z-index:15;align-items:center;gap:8px;}'
++'#cubica-configurator .settings-backdrop{display:none;position:absolute;inset:0;z-index:19;background:rgba(20,25,35,.45);opacity:0;pointer-events:none;transition:opacity .3s ease;}'
++'#cubica-configurator .settings-backdrop.open{opacity:1;pointer-events:auto;}'
++'#cubica-configurator .mobile-sliders{display:none;}'
+
+/* ПАНЕЛЬ */
++'#cubica-configurator .settings{position:absolute;top:16px;right:16px;padding:10px 12px;z-index:10;width:250px;overflow:visible;}'
++'#cubica-configurator .settings-title{font-size:9px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#9aa1ac;margin-bottom:2px;display:flex;justify-content:space-between;align-items:baseline;gap:6px;}'
++'#cubica-configurator .settings-title .val{font-size:10px;font-weight:700;letter-spacing:0;text-transform:none;color:#161a1f;white-space:nowrap;}'
++'#cubica-configurator .settings-section{margin-bottom:6px;}'
++'#cubica-configurator .settings-section:last-child{margin-bottom:0;}'
+/* Отступ сверху для секции с кнопкой «Заглушки» */
++'#cubica-configurator #ccSliderSections + .settings-section{margin-top:12px;}'
+/* Отступ между заголовком «ЦВЕТ» / «ДЕРЕВО CUBICA» и кружочками */
++'#cubica-configurator .settings-title + .swatches{margin-top:6px;}'
+
++'#cubica-configurator input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:14px;background:transparent;padding:0;cursor:pointer;outline:none;touch-action:manipulation;display:block;}'
++'#cubica-configurator input[type="range"]::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:#e0e4ea;}'
++'#cubica-configurator input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:13px;height:13px;border-radius:50%;background:#161a1f;margin-top:-5px;transition:transform .15s,background .15s;box-shadow:0 1px 4px rgba(0,0,0,.15);}'
++'#cubica-configurator input[type="range"]:hover::-webkit-slider-thumb,#cubica-configurator input[type="range"]:active::-webkit-slider-thumb{background:#c8672b;transform:scale(1.15);}'
++'#cubica-configurator input[type="range"]::-moz-range-track{height:3px;border-radius:2px;background:#e0e4ea;}'
++'#cubica-configurator input[type="range"]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:#161a1f;border:none;cursor:pointer;}'
++'#cubica-configurator input[type="range"]:hover::-moz-range-thumb{background:#c8672b;}'
+
++'#cubica-configurator .caps-btn{appearance:none;border:1px solid rgba(0,0,0,.08);cursor:pointer;padding:6px 10px;border-radius:6px;background:#fff;font-family:inherit;font-size:11px;font-weight:600;color:#2c3440;transition:all .18s ease;text-align:center;width:100%;display:flex;align-items:center;justify-content:space-between;}'
++'#cubica-configurator .caps-btn.active{background:#161a1f;color:#fff;border-color:#161a1f;}'
++'#cubica-configurator .caps-btn .caps-indicator{width:8px;height:8px;border-radius:50%;background:#d4d9e0;flex-shrink:0;transition:background .18s ease;}'
++'#cubica-configurator .caps-btn.active .caps-indicator{background:#e88a3f;}'
+
++'#cubica-configurator .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}'
++'#cubica-configurator .swatch-wrap{display:flex;flex-direction:column;align-items:center;min-width:0;}'
+/* Кружок: content-box + height:0 + padding-bottom:100% — гарантированный квадрат 1:1 */
++'#cubica-configurator .swatch{appearance:none;border:none;cursor:pointer;padding:0;width:100%;height:0;padding-bottom:100%;box-sizing:content-box;border-radius:50%;transition:box-shadow .15s ease;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;display:block;outline:none;}'
++'#cubica-configurator .swatch.active{box-shadow:0 0 0 2px #161a1f,0 0 0 3px #fff;}'
++'#cubica-configurator .swatch-label{font-size:7px;color:#5a6572;text-align:center;margin-top:2px;font-weight:600;text-transform:uppercase;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}'
+
++'#cubica-configurator .legend{position:absolute;top:16px;left:16px;padding:10px 14px;z-index:10;font-size:11px;line-height:1.7;pointer-events:none;}'
++'#cubica-configurator .legend-row{display:flex;align-items:center;gap:8px;color:#2c3440;}'
++'#cubica-configurator .legend-swatch{width:12px;height:12px;border-radius:3px;flex-shrink:0;background-size:cover;background-position:center;}'
+
++'#cubica-configurator .cam-reset{position:absolute;top:160px;left:16px;padding:7px 11px;font-size:10px;font-weight:600;color:#5a6572;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;gap:6px;z-index:10;}'
++'#cubica-configurator .hint{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);padding:8px 14px;font-size:11px;color:#5a6572;z-index:10;pointer-events:none;}'
++'#cubica-configurator .anim-ctrl{position:absolute;bottom:16px;right:16px;padding:8px;display:flex;gap:4px;z-index:10;}'
++'#cubica-configurator .anim-btn{appearance:none;border:none;cursor:pointer;padding:8px 14px;border-radius:8px;background:transparent;font-family:inherit;font-size:12px;font-weight:600;color:#2c3440;transition:all .18s ease;}'
++'#cubica-configurator .anim-btn:hover{background:rgba(200,103,43,.1);color:#c8672b;}'
++'#cubica-configurator .anim-btn.active{background:#161a1f;color:#fff;}'
++'#cubica-configurator .anim-btn.paused{background:#c8672b;color:#fff;}'
+
++'#cubica-configurator .loading{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:#dde4ec;font-size:13px;color:#7a8694;transition:opacity .5s;padding:20px;text-align:center;}'
++'#cubica-configurator .loading.hidden{opacity:0;pointer-events:none;}'
++'#cubica-configurator .watermarks{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden;}'
++'#cubica-configurator .watermarks span{position:absolute;font-size:22px;font-weight:800;letter-spacing:3px;color:rgba(55,68,88,.13);transform:rotate(-24deg);transform-origin:left center;white-space:nowrap;user-select:none;-webkit-user-select:none;pointer-events:none;}'
+
++'#cubica-configurator .mini-frame{position:absolute;left:16px;bottom:16px;width:230px;height:170px;z-index:9;border-radius:14px;overflow:hidden;pointer-events:none;box-shadow:0 10px 30px -10px rgba(20,25,35,.42);border:1px solid rgba(255,255,255,.55);background:#3a424c;}'
++'#cubica-configurator .mini-frame canvas{display:block;width:100% !important;height:100% !important;}'
++'#cubica-configurator .mini-title{position:absolute;left:10px;top:8px;font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.72);z-index:1;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.5);}'
++'#cubica-configurator .mini-label{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-size:10px;font-weight:700;color:#fff;background:rgba(20,25,35,.78);padding:4px 10px;border-radius:8px;letter-spacing:0.3px;white-space:nowrap;z-index:1;pointer-events:none;}'
++'#cubica-configurator .mini-label.empty{opacity:0;}'
+
++'@media (max-width:900px){'
++'#cubica-configurator{height:640px;}'
++'#cubica-configurator .settings{width:220px;padding:10px 12px;}'
++'#cubica-configurator .cam-reset{top:150px;}'
++'#cubica-configurator .mini-frame{left:12px;bottom:12px;width:170px;height:128px;}'
++'#cubica-configurator .mini-label{font-size:9px;padding:3px 7px;}'
++'#cubica-configurator .mini-title{font-size:8px;}'
++'#cubica-configurator .watermarks span{font-size:16px;letter-spacing:2px;}'
++'}'
+
++'@media (max-width:600px){'
++'#cubica-configurator{height:100vh;min-height:480px;border-radius:0;}'
++'#cubica-configurator .settings-toggle{display:flex;top:calc(12px + env(safe-area-inset-top,0px));right:12px;padding:10px 14px;font-size:12px;}'
++'#cubica-configurator .cam-reset,#cubica-configurator .legend,#cubica-configurator .hint{display:none;}'
++'#cubica-configurator .settings-backdrop{display:block;}'
++'#cubica-configurator .mobile-sliders{display:block;position:absolute;top:calc(12px + env(safe-area-inset-top,0px));left:12px;right:96px;padding:10px 12px;z-index:12;border-radius:14px;box-shadow:0 8px 24px -10px rgba(20,25,35,.22);}'
++'#cubica-configurator .mobile-sliders #ccSliderSections .settings-section{display:flex;align-items:center;gap:10px;margin-bottom:6px;}'
++'#cubica-configurator .mobile-sliders #ccSliderSections .settings-section:last-child{margin-bottom:0;}'
++'#cubica-configurator .mobile-sliders .settings-title{flex:0 0 90px;width:90px;margin:0;padding:0;font-size:10px;text-transform:none;letter-spacing:0;color:#5a6572;display:block;text-align:left;font-weight:600;}'
++'#cubica-configurator .mobile-sliders .settings-title .val{display:block;font-size:12px;font-weight:700;color:#161a1f;margin-top:1px;}'
++'#cubica-configurator .mobile-sliders input[type="range"]{flex:1;height:32px;}'
++'#cubica-configurator .mobile-sliders input[type="range"]::-webkit-slider-runnable-track{height:6px;border-radius:3px;}'
++'#cubica-configurator .mobile-sliders input[type="range"]::-webkit-slider-thumb{width:24px;height:24px;margin-top:-9px;}'
++'#cubica-configurator .mobile-sliders input[type="range"]::-moz-range-track{height:6px;border-radius:3px;}'
++'#cubica-configurator .mobile-sliders input[type="range"]::-moz-range-thumb{width:24px;height:24px;}'
++'#cubica-configurator .settings{position:absolute;top:auto;left:0;right:0;bottom:0;width:100%;max-height:70vh;padding:28px 18px calc(20px + env(safe-area-inset-bottom,0px));border-radius:22px 22px 0 0;transform:translateY(110%);transition:transform .32s cubic-bezier(.22,.7,.35,1);z-index:20;overflow-y:auto;}'
++'#cubica-configurator .settings.open{transform:translateY(0);}'
++'#cubica-configurator .settings::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:44px;height:5px;background:#d4d9e0;border-radius:3px;}'
++'#cubica-configurator .settings-title{font-size:11px;margin-bottom:8px;}'
++'#cubica-configurator .settings-title .val{font-size:13px;}'
++'#cubica-configurator .settings-section{margin-bottom:14px;}'
++'#cubica-configurator .caps-btn{padding:14px 16px;font-size:13px;}'
++'#cubica-configurator .swatches{gap:10px;}'
++'#cubica-configurator .swatch{min-width:44px;}'
++'#cubica-configurator .swatch-label{font-size:10px;}'
++'#cubica-configurator .anim-ctrl{bottom:calc(12px + env(safe-area-inset-bottom,0px));left:12px;right:12px;padding:6px;justify-content:center;gap:2px;z-index:13;}'
++'#cubica-configurator .anim-btn{padding:10px 12px;font-size:11px;flex:1;min-width:0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}'
++'#cubica-configurator .mini-frame{left:12px;bottom:calc(72px + env(safe-area-inset-bottom,0px));width:150px;height:112px;border-radius:12px;}'
++'#cubica-configurator .mini-label{font-size:8px;padding:2px 6px;bottom:5px;}'
++'#cubica-configurator .mini-title{font-size:7px;left:7px;top:6px;}'
++'#cubica-configurator .watermarks span{font-size:14px;letter-spacing:2px;}'
++'}';
+
+(function(){
+  var existing=document.getElementById('cubica-widget-css');
+  if(existing&&existing.parentNode)existing.parentNode.removeChild(existing);
+  var st=document.createElement('style');
+  st.type='text/css';
+  st.id='cubica-widget-css';
+  if(st.styleSheet)st.styleSheet.cssText=CSS;
+  else st.appendChild(document.createTextNode(CSS));
+  (document.head||document.documentElement).appendChild(st);
+})();
+
+function showError(msg){
+  var ld=document.getElementById('ccLoading');
+  if(ld){ld.textContent=msg;ld.classList.remove('hidden');}
+  console.error('Cubica:',msg);
+}
+window.addEventListener('error',function(e){
+  var ld=document.getElementById('ccLoading');
+  if(ld&&!ld.classList.contains('hidden')){ld.textContent='Ошибка: '+(e.message||'неизвестная');}
+});
+if(typeof THREE==='undefined'){showError('Ошибка: Three.js не загружен.');return;}
+if(typeof THREE.OrbitControls==='undefined'){showError('Ошибка: OrbitControls не загружен.');return;}
+
+var MM=0.002;
+var params={railW:50,railH:50,gap:40,color:0xecece7,wood:'denver',caps:false};
+var WALL_T_MM=1.5,FLANGE_MM=5.0,RAIL_TOP_Y_MM=10,STRINGER_SPAN_MM=2400,RAIL_OVERHANG_MM=200;
+var CARRIER_W_MM=30,CARRIER_H_MM=20,CARRIER_WALL_MM=1.5,CARRIER_STEP_MM=600,CARRIER_OVERHANG_MM=200;
+var SLOT_T_MM=2.0,SLOT_ARM_MM=5.0,FIX_GAP_MM=3.0,FIX_SLOT_MM=3.0,FIXER_MAX_ANGLE=Math.PI/2;
+var TARGET_WIDTH_MM=1800,MAX_RAILS=60;
+var ROD_H_MM=400,ROD_R_MM=3.2,NUT_R_MM=6,NUT_H_MM=5.5,ANCHOR_H_MM=45,ANCHOR_R_MM=9,HANGER_STEP_MM=600;
+var CAP_PLATE_MM=1.5,CAP_FLAP_MM=5.0,CAP_FLY_MM=350;
+var LIFT=1.2*1.3,ANIM_STEP_SEC=0.05*1.3,ANIM_MOVE_SEC=1.5*1.3,ANIM_PAUSE_SEC=2.0,CAP_SPEED=0.025*0.7;
+var EPS_ANGLE=0.0008,EPS_Y=0.00015,REBUILD_DEBOUNCE_MS=100;
+var scene=null,camera=null,renderer=null,controls=null;
+var ceilingGroup=null,rails=[];
+var state={mode:'auto',manualProgress:0,manualTarget:0};
+var isHidden=false,animPaused=false,cameraInitialized=false;
+var capProgress=0,capProgressTarget=0;
+var fixerInstMesh=null,fixerData=[];
+var _fixDummy=new THREE.Object3D();
+var capPlateInst=null,capTopInst=null,capBotInst=null,capLeftInst=null,capRightInst=null;
+var _capDummy=new THREE.Object3D();
+var capInHalfW=0,capInHalfH=0,capPlateT=0,capFlapLen=0,capOffZBase=0,capRailH=0,capRailBaseY=0;
+var railPositions=[],railOrder=[];
+var animationTime=0,lastFrameTime=0;
+var timeline={N:0,T_ASSEMBLE:0,T_DISASSEMBLE:0,CYCLE:1};
+var rebuildTimer=null;
+var legGeoCache={},LEG_GEO_CACHE_MAX=8;
+var M=null,savedDrops=[];
+var miniScene=null,miniCamera=null,miniRenderer=null;
+var miniRailGroup=null,miniFixerL=null,miniFixerR=null;
+var miniRailTopRestY=0,miniLift=30*MM;
+var miniTime=0,miniLabelTimer=0,miniLabelEl=null,miniFrameEl=null,miniAvailable=false;
+var threadTex=null,woodTextures={};
+
+/* --- perf --- */
+var _dropCache=[];
+var _lastCapFly=-999;
+var _miniAccum=0;
+var _MINI_FRAME_TIME=1/30;
+
+function makeThreadTexture(){
+  var W=32,H=64,c=document.createElement('canvas');c.width=W;c.height=H;
+  var ctx=c.getContext('2d');
+  ctx.fillStyle='#3a4048';ctx.fillRect(0,0,W,H);
+  for(var y=0;y<H;y+=4){ctx.fillStyle='rgba(190,200,215,0.6)';ctx.fillRect(0,y,W,1);ctx.fillStyle='rgba(0,0,0,0.4)';ctx.fillRect(0,y+1.5,W,0.8);}
+  var g=ctx.createLinearGradient(0,0,W,0);g.addColorStop(0,'rgba(0,0,0,0.4)');g.addColorStop(0.5,'rgba(255,255,255,0.08)');g.addColorStop(1,'rgba(0,0,0,0.4)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(1,12);
+  return t;
+}
+function makeWood(base,dark,opts){
+  opts=opts||{};
+  var gd=opts.grainDensity||170,gc=opts.grainContrast||1,wa=opts.warpAmp||3,lb=opts.lightnessBands||70;
+  var W=256,H=256,c=document.createElement('canvas');c.width=W;c.height=H;
+  var ctx=c.getContext('2d');
+  var g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,base);g.addColorStop(1,dark);
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  for(var i=0;i<gd;i++){var x=Math.random()*W;ctx.strokeStyle='rgba(0,0,0,'+((0.04+Math.random()*0.09)*gc)+')';ctx.lineWidth=0.4+Math.random()*1.3;ctx.beginPath();var y=0,xx=x;ctx.moveTo(xx,y);while(y<H){y+=6+Math.random()*10;xx+=(Math.random()-0.5)*wa;ctx.lineTo(xx,y);}ctx.stroke();}
+  for(var j=0;j<lb;j++){var x2=Math.random()*W;ctx.strokeStyle='rgba(255,255,255,'+((0.02+Math.random()*0.05)*gc)+')';ctx.lineWidth=0.3+Math.random()*1.1;ctx.beginPath();var y2=0,xx2=x2;ctx.moveTo(xx2,y2);while(y2<H){y2+=8+Math.random()*12;xx2+=(Math.random()-0.5)*(wa*0.66);ctx.lineTo(xx2,y2);}ctx.stroke();}
+  /* Зеркальное повторение — края текстуры при стыке идеально совпадают, шва не видно */
+  var tex=new THREE.CanvasTexture(c);tex.wrapS=tex.wrapT=THREE.MirroredRepeatWrapping;tex.anisotropy=4;
+  return tex;
+}
+function makeWoodSwatch(base,dark,opts){
+  opts=opts||{};
+  var S=96;
+  var c=document.createElement('canvas');c.width=S;c.height=S;
+  var ctx=c.getContext('2d');
+  var g=ctx.createLinearGradient(0,0,S,S);
+  g.addColorStop(0,base);g.addColorStop(1,dark);
+  ctx.fillStyle=g;ctx.fillRect(0,0,S,S);
+  var gd=opts.grainDensity||170,gc=opts.grainContrast||1,wa=opts.warpAmp||3,lb=opts.lightnessBands||70;
+  var gdS=Math.max(60,Math.round(gd*0.55));
+  var lbS=Math.max(20,Math.round(lb*0.5));
+  for(var i=0;i<gdS;i++){
+    var x=Math.random()*S;
+    ctx.strokeStyle='rgba(0,0,0,'+((0.05+Math.random()*0.10)*gc)+')';
+    ctx.lineWidth=0.4+Math.random()*1.0;
+    ctx.beginPath();
+    var y=0,xx=x;ctx.moveTo(xx,y);
+    while(y<S){y+=4+Math.random()*6;xx+=(Math.random()-0.5)*wa;ctx.lineTo(xx,y);}
+    ctx.stroke();
+  }
+  for(var j=0;j<lbS;j++){
+    var x2=Math.random()*S;
+    ctx.strokeStyle='rgba(255,255,255,'+((0.03+Math.random()*0.06)*gc)+')';
+    ctx.lineWidth=0.3+Math.random()*0.9;
+    ctx.beginPath();
+    var y2=0,xx2=x2;ctx.moveTo(xx2,y2);
+    while(y2<S){y2+=5+Math.random()*8;xx2+=(Math.random()-0.5)*(wa*0.66);ctx.lineTo(xx2,y2);}
+    ctx.stroke();
+  }
+  return c.toDataURL('image/png');
+}
+
+/* Текстура надписи "Cubica.by" для стрингера в мини-сцене */
+function makeMiniLabelTexture(){
+  var W=512,H=128,c=document.createElement('canvas');c.width=W;c.height=H;
+  var ctx=c.getContext('2d');
+  ctx.clearRect(0,0,W,H);
+  ctx.font='800 74px Manrope, Arial, sans-serif';
+  ctx.textAlign='center';
+  ctx.textBaseline='middle';
+  ctx.fillStyle='rgba(0,0,0,0.55)';
+  ctx.fillText('Cubica.by',W/2+2,H/2+2);
+  var grad=ctx.createLinearGradient(0,H/2-30,0,H/2+30);
+  grad.addColorStop(0,'#eef2f7');
+  grad.addColorStop(0.5,'#c8d0da');
+  grad.addColorStop(1,'#9aa3ae');
+  ctx.fillStyle=grad;
+  ctx.fillText('Cubica.by',W/2,H/2);
+  var t=new THREE.CanvasTexture(c);
+  t.anisotropy=4;
+  t.needsUpdate=true;
+  return t;
+}
+
+var WOOD_PROC={
+  denver:{base:'#c9a166',dark:'#8a6b3a',opts:{grainDensity:170,warpAmp:3}},
+  wellington:{base:'#9a8470',dark:'#5c4a38',opts:{grainDensity:170,warpAmp:3}},
+  tokyo:{base:'#6a4530',dark:'#3a2418',opts:{grainDensity:170,warpAmp:3}},
+  toronto:{base:'#5c4636',dark:'#241812',opts:{grainDensity:240,warpAmp:1.5,grainContrast:1.3,lightnessBands:40}},
+  vancouver:{base:'#6a4a34',dark:'#2a1810',opts:{grainDensity:210,warpAmp:4.5,grainContrast:1.5,lightnessBands:55}},
+  rio:{base:'#d4a05a',dark:'#8a5a20',opts:{grainDensity:140,warpAmp:2,grainContrast:0.8,lightnessBands:70}},
+  stockholm:{base:'#9a7a56',dark:'#4a3020',opts:{grainDensity:180,warpAmp:2.5,grainContrast:1.1,lightnessBands:65}},
+  sydney:{base:'#dbb070',dark:'#9a6830',opts:{grainDensity:120,warpAmp:3.5,grainContrast:1.4,lightnessBands:80}}
+};
+function buildWoodTextures(){Object.keys(WOOD_PROC).forEach(function(n){var p=WOOD_PROC[n];woodTextures[n]=makeWood(p.base,p.dark,p.opts);});}
+
+function applySwatchBackgrounds(){
+  var btns=document.querySelectorAll('#ccWoodGrid .swatch');
+  for(var i=0;i<btns.length;i++){
+    var w=btns[i].dataset.wood;
+    var p=WOOD_PROC[w];
+    if(p){
+      var url=makeWoodSwatch(p.base,p.dark,p.opts);
+      btns[i].style.backgroundImage='url('+url+')';
+      btns[i].style.backgroundSize='cover';
+      btns[i].style.backgroundPosition='center';
+    }
+  }
+  var lg=document.getElementById('ccLegendRail');
+  if(lg && params.wood){
+    var p2=WOOD_PROC[params.wood];
+    if(p2){
+      var url2=makeWoodSwatch(p2.base,p2.dark,p2.opts);
+      lg.style.background='';
+      lg.style.backgroundImage='url('+url2+')';
+      lg.style.backgroundSize='cover';
+      lg.style.backgroundPosition='center';
+    }
+  }
+}
+
+function makeMaterials(){
+  if(!threadTex)threadTex=makeThreadTexture();
+  var mat={
+    steel:new THREE.MeshStandardMaterial({color:0x8a97a6,metalness:0.85,roughness:0.32,side:THREE.DoubleSide}),
+    rod:new THREE.MeshStandardMaterial({color:0xffffff,map:threadTex,metalness:0.85,roughness:0.45}),
+    bolt:new THREE.MeshStandardMaterial({color:0xa8b0ba,metalness:0.85,roughness:0.4}),
+    brass:new THREE.MeshStandardMaterial({color:0xc9a961,metalness:0.95,roughness:0.28}),
+    slab:new THREE.MeshStandardMaterial({color:0xdfe4ea,metalness:0.1,roughness:0.9,transparent:true,opacity:0.3})
+  };
+  mat.rail=new THREE.MeshStandardMaterial({color:0xffffff,metalness:0.0,roughness:0.62,side:THREE.DoubleSide});
+  mat.cap=mat.rail.clone();mat.cap.transparent=true;mat.cap.opacity=0;
+  return mat;
+}
+function updateRailMaterial(){
+  if(!M||!M.rail)return;
+  if(params.wood&&woodTextures[params.wood]){M.rail.map=woodTextures[params.wood];M.rail.color.setHex(0xffffff);M.rail.metalness=0.10;M.rail.roughness=0.62;}
+  else{M.rail.map=null;M.rail.color.setHex(params.color);M.rail.metalness=0.0;M.rail.roughness=0.62;}
+  M.rail.needsUpdate=true;
+  M.cap.map=M.rail.map;M.cap.color.copy(M.rail.color);M.cap.metalness=M.rail.metalness;M.cap.roughness=M.rail.roughness;M.cap.needsUpdate=true;
+}
+function makeRailProfileGeo(railW,railH,wallT,flange,length){
+  var halfW=railW/2;var maxFlange=halfW-wallT*1.2;if(flange>maxFlange)flange=maxFlange;
+  var s=new THREE.Shape();
+  s.moveTo(-halfW,0);s.lineTo(-halfW,railH);s.lineTo(-halfW+flange,railH);s.lineTo(-halfW+flange,railH-wallT);s.lineTo(-halfW+wallT,railH-wallT);s.lineTo(-halfW+wallT,wallT);s.lineTo(halfW-wallT,wallT);s.lineTo(halfW-wallT,railH-wallT);s.lineTo(halfW-flange,railH-wallT);s.lineTo(halfW-flange,railH);s.lineTo(halfW,railH);s.lineTo(halfW,0);s.closePath();
+  var geo=new THREE.ExtrudeGeometry(s,{depth:length,bevelEnabled:false,curveSegments:1,steps:1});
+  geo.translate(0,0,-length/2);return geo;
+}
+function makeCarrierLegGeo(carrierLength,legHeight,carrierWall,allPositions,railW){
+  var halfL=carrierLength/2,hw=railW/2;
+  var t=SLOT_T_MM*MM,h=RAIL_TOP_Y_MM*MM,arm=SLOT_ARM_MM*MM;
+  var fixGap=FIX_GAP_MM*MM,fixSlot=FIX_SLOT_MM*MM;
+  var cuts=[];
+  for(var i=0;i<allPositions.length;i++){
+    var rx=allPositions[i];
+    var lOutL=rx-hw-fixGap-fixSlot,lOutR=rx-hw+t,lPlechoR=rx-hw+t+arm;
+    cuts.push({outerLeft:lOutL,pts:[[lOutL,0],[lOutL,h],[lPlechoR,h],[lPlechoR,h-t],[lOutR,h-t],[lOutR,0]]});
+    var rOutL=rx+hw-t,rPlechoL=rx+hw-t-arm,rOutR=rx+hw+fixGap+fixSlot;
+    cuts.push({outerLeft:rOutL,pts:[[rOutL,0],[rOutL,h-t],[rPlechoL,h-t],[rPlechoL,h],[rOutR,h],[rOutR,0]]});
+  }
+  cuts.sort(function(a,b){return a.outerLeft-b.outerLeft;});
+  var shape=new THREE.Shape();
+  shape.moveTo(-halfL,0);
+  for(var k=0;k<cuts.length;k++){var c=cuts[k];for(var j=0;j<c.pts.length;j++)shape.lineTo(c.pts[j][0],c.pts[j][1]);}
+  shape.lineTo(halfL,0);shape.lineTo(halfL,legHeight);shape.lineTo(-halfL,legHeight);shape.lineTo(-halfL,0);
+  var geo=new THREE.ExtrudeGeometry(shape,{depth:carrierWall,bevelEnabled:false,curveSegments:1,steps:1});
+  geo.translate(0,0,-carrierWall/2);return geo;
+}
+function getCachedLegGeo(cl,lh,cw,ap,rw,gap){
+  var key=[cl.toFixed(5),lh.toFixed(5),cw.toFixed(5),rw.toFixed(5),gap.toFixed(5),ap.length].join('|');
+  if(legGeoCache[key])return legGeoCache[key];
+  var geo=makeCarrierLegGeo(cl,lh,cw,ap,rw);legGeoCache[key]=geo;
+  var keys=Object.keys(legGeoCache);
+  if(keys.length>LEG_GEO_CACHE_MAX){var old=keys[0];if(legGeoCache[old]&&legGeoCache[old].dispose){try{legGeoCache[old].dispose();}catch(e){}}delete legGeoCache[old];}
+  return geo;
+}
+function updateTimeline(numRails){
+  timeline.N=numRails;
+  timeline.T_ASSEMBLE=Math.max(ANIM_MOVE_SEC,(numRails-1)*ANIM_STEP_SEC+ANIM_MOVE_SEC);
+  timeline.T_DISASSEMBLE=timeline.T_ASSEMBLE;
+  timeline.CYCLE=timeline.T_ASSEMBLE+ANIM_PAUSE_SEC+timeline.T_DISASSEMBLE+ANIM_PAUSE_SEC;
+}
+function generateRailOrder(N){var rank=new Array(N);for(var i=0;i<N;i++)rank[i]=i;return rank;}
+function setCapInst(instMesh,instIdx,capX,capY,capZ,rotY,lx,ly,lz){
+  var cosA=Math.cos(rotY),sinA=Math.sin(rotY);
+  var wlx=cosA*lx+sinA*lz,wlz=-sinA*lx+cosA*lz;
+  _capDummy.position.set(capX+wlx,capY+ly,capZ+wlz);_capDummy.rotation.set(0,rotY,0);_capDummy.updateMatrix();
+  instMesh.setMatrixAt(instIdx,_capDummy.matrix);
+}
+function captureCurrentDrops(){
+  savedDrops=[];if(rails.length===0)return;
+  for(var i=0;i<rails.length;i++){var g=rails[i];var idx=g.userData.index;var d=(g.userData.baseY-g.position.y)/LIFT;if(d<0)d=0;if(d>1)d=1;savedDrops[idx]=d;}
+}
+function getInitDrop(idx,rank,tCycle,autoModeNow,invN){
+  if(savedDrops[idx]!==undefined)return savedDrops[idx];
+  if(autoModeNow)return dropForRank(tCycle,rank);
+  var delayM=(rank*invN)*0.35;return Math.max(0,Math.min(1,(state.manualProgress-delayM)/Math.max(0.001,(1-delayM))));
+}
+function ease(x){return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+function smoothstep(a,b,x){if(x<=a)return 0;if(x>=b)return 1;var t=(x-a)/(b-a);return t*t*(3-2*t);}
+function dropForRank(t,rank){
+  var idxTime=rank*ANIM_STEP_SEC;var T_A=timeline.T_ASSEMBLE,T_D=timeline.T_DISASSEMBLE,P=ANIM_PAUSE_SEC;
+  if(t<T_A){var tr=t-idxTime;if(tr<0)return 1;if(tr>=ANIM_MOVE_SEC)return 0;return 1-ease(tr/ANIM_MOVE_SEC);}
+  else if(t<T_A+P){return 0;}
+  else if(t<T_A+P+T_D){var tr2=t-T_A-P-idxTime;if(tr2<0)return 0;if(tr2>=ANIM_MOVE_SEC)return 1;return ease(tr2/ANIM_MOVE_SEC);}
+  return 1;
+}
+
+function buildMiniScene(){
+  miniScene=new THREE.Scene();miniScene.background=new THREE.Color(0x3a424c);
+  var railW=50*MM,railH=50*MM,wT=1.5*MM,fl=5.0*MM;
+  var carrierW=CARRIER_W_MM*MM,carrierWall=CARRIER_WALL_MM*MM;
+  var legH=(CARRIER_H_MM-CARRIER_WALL_MM)*MM;var fixH=RAIL_TOP_Y_MM*MM,fixW=FIX_GAP_MM*MM;var legW=66*MM;
+  var flangeGeo=new THREE.BoxGeometry(legW,carrierWall,carrierW);
+  var flangeMesh=new THREE.Mesh(flangeGeo,M.steel);flangeMesh.position.set(0,legH+carrierWall/2,0);miniScene.add(flangeMesh);
+  var legGeo=makeCarrierLegGeo(legW,legH,carrierWall,[0],railW);
+  var frontLegZ=carrierW/2-carrierWall/2,backLegZ=-carrierW/2+carrierWall/2;
+  var frontLegMesh=new THREE.Mesh(legGeo,M.steel);frontLegMesh.position.set(0,0,frontLegZ);miniScene.add(frontLegMesh);
+  var backLegMesh=new THREE.Mesh(legGeo,M.steel);backLegMesh.position.set(0,0,backLegZ);miniScene.add(backLegMesh);
+
+  /* Надпись Cubica.by на передней стенке стрингера (передняя ножка) */
+  var labelTex=makeMiniLabelTexture();
+  var labelMat=new THREE.MeshBasicMaterial({map:labelTex,transparent:true,depthWrite:false,side:THREE.DoubleSide});
+  var labelW=legW*0.68;
+  var labelH=labelW*(128/512);
+  var labelGeo=new THREE.PlaneGeometry(labelW,labelH);
+  var labelMesh=new THREE.Mesh(labelGeo,labelMat);
+  labelMesh.position.set(0,legH*0.72,frontLegZ+carrierWall/2+0.0006);
+  labelMesh.renderOrder=2;
+  miniScene.add(labelMesh);
+
+  var railLen=carrierW+20*MM;var railGeo=makeRailProfileGeo(railW,railH,wT,fl,railLen);
+  miniRailGroup=new THREE.Group();var railMesh=new THREE.Mesh(railGeo,M.rail);miniRailGroup.add(railMesh);
+  var railTopY=RAIL_TOP_Y_MM*MM;miniRailGroup.position.set(0,railTopY-railH,0);miniRailTopRestY=miniRailGroup.position.y;miniScene.add(miniRailGroup);
+  var halfRailW=railW/2,fixGap=FIX_GAP_MM*MM;var leftFixX=-halfRailW-fixGap/2,rightFixX=halfRailW+fixGap/2;
+  function makeMiniFixer(pivotX,pivotZ,sign){var pivot=new THREE.Group();pivot.position.set(pivotX,fixH,pivotZ);var mesh=new THREE.Mesh(new THREE.BoxGeometry(fixW,fixH,carrierWall*1.4),M.steel);mesh.position.set(0,-fixH/2,0);pivot.add(mesh);pivot.userData.sign=sign;return pivot;}
+  miniFixerL=makeMiniFixer(leftFixX,frontLegZ,-1);miniFixerR=makeMiniFixer(rightFixX,frontLegZ,-1);
+  miniScene.add(miniFixerL);miniScene.add(miniFixerR);
+  miniScene.add(new THREE.HemisphereLight(0xffffff,0x3d4550,1.15));
+  var mk=new THREE.DirectionalLight(0xffffff,1.35);mk.position.set(0.06,0.18,0.14);miniScene.add(mk);
+  var mf=new THREE.DirectionalLight(0xffffff,0.70);mf.position.set(-0.10,0.05,0.06);miniScene.add(mf);
+  var mr=new THREE.DirectionalLight(0xffffff,0.55);mr.position.set(0.02,-0.08,-0.12);miniScene.add(mr);
+  var mrim=new THREE.DirectionalLight(0xffffff,0.60);mrim.position.set(0,0.02,-0.20);miniScene.add(mrim);
+  miniCamera=new THREE.PerspectiveCamera(30,230/170,0.001,2);
+  miniCamera.position.set(-0.055,0.078,0.180);miniCamera.lookAt(0,0.005,0.010);
+}
+function initMiniRenderer(){
+  if(!miniFrameEl)return false;
+  try{
+    var w=miniFrameEl.clientWidth||230,h=miniFrameEl.clientHeight||170;
+    miniRenderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:'default'});
+    miniRenderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+    miniRenderer.setSize(w,h,false);
+    miniRenderer.setClearColor(0x3a424c,1);miniRenderer.outputEncoding=THREE.sRGBEncoding;
+    miniRenderer.domElement.style.display='block';miniRenderer.domElement.style.width='100%';miniRenderer.domElement.style.height='100%';
+    if(miniFrameEl.firstChild)miniFrameEl.insertBefore(miniRenderer.domElement,miniFrameEl.firstChild);else miniFrameEl.appendChild(miniRenderer.domElement);
+    if(miniCamera){miniCamera.aspect=w/h;miniCamera.updateProjectionMatrix();}
+    return true;
+  }catch(e){console.warn('Mini renderer failed:',e);if(miniFrameEl)miniFrameEl.style.display='none';miniRenderer=null;return false;}
+}
+function resizeMiniRenderer(){
+  if(!miniRenderer||!miniFrameEl)return;
+  var w=miniFrameEl.clientWidth,h=miniFrameEl.clientHeight;if(!w||!h)return;
+  miniRenderer.setSize(w,h,false);if(miniCamera){miniCamera.aspect=w/h;miniCamera.updateProjectionMatrix();}
+}
+function miniStateAtTime(t){
+  var T=t%9.0,fixerOpen=0,drop=0,text='';
+  if(T<1.4){fixerOpen=ease(T/1.4);drop=1;text='Фиксатор отгибается';}
+  else if(T<3.6){fixerOpen=1;drop=1-ease((T-1.4)/2.2);text='Заводим рейку в стрингер';}
+  else if(T<4.2){fixerOpen=1;drop=0;text='Рейка вставлена';}
+  else if(T<5.6){fixerOpen=1-ease((T-4.2)/1.4);drop=0;text='Загибаем фиксатор';}
+  else if(T<6.4){fixerOpen=0;drop=0;text='Собрано';}
+  else if(T<7.8){fixerOpen=ease((T-6.4)/1.4);drop=0;text='Фиксатор отгибается';}
+  else{fixerOpen=1;drop=ease((T-7.8)/1.2);text='Извлекаем рейку';}
+  return {fixerOpen:fixerOpen,drop:drop,text:text};
+}
+
+function build(){
+  try{
+    captureCurrentDrops();
+    var savedCam=null,savedTarget=null;
+    if(cameraInitialized&&camera&&controls){savedCam=camera.position.clone();savedTarget=controls.target.clone();}
+    if(ceilingGroup){
+      scene.remove(ceilingGroup);
+      var disposed={};
+      ceilingGroup.traverse(function(obj){if(obj.geometry&&!disposed[obj.geometry.uuid]){var isCached=false;for(var k in legGeoCache){if(legGeoCache[k]===obj.geometry){isCached=true;break;}}if(!isCached){try{obj.geometry.dispose();}catch(e){}disposed[obj.geometry.uuid]=true;}}});
+      ceilingGroup=null;
+    }
+    rails=[];fixerData=[];fixerInstMesh=null;
+    capPlateInst=capTopInst=capBotInst=capLeftInst=capRightInst=null;
+    var railW=params.railW*MM,railH=params.railH*MM,gap=params.gap*MM;
+    var wallT=WALL_T_MM*MM,flange=FLANGE_MM*MM,railTopY=RAIL_TOP_Y_MM*MM;var pitch=railW+gap;
+    var carrierW=CARRIER_W_MM*MM,carrierH=CARRIER_H_MM*MM,carrierWall=CARRIER_WALL_MM*MM;
+    var carrierStep=CARRIER_STEP_MM*MM,carrierOverhang=CARRIER_OVERHANG_MM*MM;
+    var rodH=ROD_H_MM*MM,rodR=ROD_R_MM*MM;var nutR=NUT_R_MM*MM,nutH=NUT_H_MM*MM;
+    var anchorH=ANCHOR_H_MM*MM,anchorR=ANCHOR_R_MM*MM;var hangerStep=HANGER_STEP_MM*MM;
+    var capT=CAP_PLATE_MM*MM,capFlapLenLocal=CAP_FLAP_MM*MM;
+    var targetW=TARGET_WIDTH_MM*MM;var numRails=Math.max(2,Math.min(MAX_RAILS,Math.round(targetW/pitch)));
+    var totalW=numRails*pitch-gap;var stringerSpan=STRINGER_SPAN_MM*MM;
+    var railLength=(STRINGER_SPAN_MM+2*RAIL_OVERHANG_MM)*MM;var carrierLength=totalW+2*carrierOverhang;
+    var fixGap=FIX_GAP_MM*MM,fixSlot=FIX_SLOT_MM*MM,fixH=RAIL_TOP_Y_MM*MM;
+    var fixerGeoShared=new THREE.BoxGeometry(fixGap,fixH,carrierWall);fixerGeoShared.translate(0,-fixH/2,0);
+    railOrder=generateRailOrder(numRails);updateTimeline(numRails);railPositions=[];
+    for(var i=0;i<numRails;i++)railPositions.push(-totalW/2+railW/2+i*pitch);
+    var halfPattern=railW/2+fixGap+fixSlot,carrierHalf=carrierLength/2;
+    var extendedLeft=[],curX=railPositions[0]-pitch;
+    while(curX-halfPattern>=-carrierHalf){extendedLeft.unshift(curX);curX-=pitch;}
+    var extendedRight=[];curX=railPositions[railPositions.length-1]+pitch;
+    while(curX+halfPattern<=carrierHalf){extendedRight.push(curX);curX+=pitch;}
+    var allPositions=extendedLeft.concat(railPositions,extendedRight);var realIndexOffset=extendedLeft.length;
+    if(!M){M=makeMaterials();updateRailMaterial();}
+    ceilingGroup=new THREE.Group();ceilingGroup.matrixAutoUpdate=false;ceilingGroup.updateMatrix();scene.add(ceilingGroup);
+    var numCarriers=Math.max(2,Math.round(stringerSpan/carrierStep)+1);var actualStep=stringerSpan/(numCarriers-1);
+    var legHeight=carrierH-carrierWall;
+    var flangeGeo=new THREE.BoxGeometry(carrierLength,carrierWall,carrierW);
+    var legGeo=getCachedLegGeo(carrierLength,legHeight,carrierWall,allPositions,railW,gap);
+    for(var c=0;c<numCarriers;c++){
+      var cz=-stringerSpan/2+c*actualStep;
+      var fmesh=new THREE.Mesh(flangeGeo,M.steel);fmesh.position.set(0,carrierH-carrierWall/2,cz);fmesh.updateMatrix();fmesh.matrixAutoUpdate=false;ceilingGroup.add(fmesh);
+      var leftZ=cz-carrierW/2+carrierWall/2;var lmesh=new THREE.Mesh(legGeo,M.steel);lmesh.position.set(0,0,leftZ);lmesh.updateMatrix();lmesh.matrixAutoUpdate=false;ceilingGroup.add(lmesh);
+      var rightZ=cz+carrierW/2-carrierWall/2;var rmesh=new THREE.Mesh(legGeo,M.steel);rmesh.position.set(0,0,rightZ);rmesh.updateMatrix();rmesh.matrixAutoUpdate=false;ceilingGroup.add(rmesh);
+      for(var ai=0;ai<allPositions.length;ai++){
+        var rx=allPositions[ai];var aL=rx-railW/2,aR=rx+railW/2;
+        var leftFixX=aL-fixGap/2,rightFixX=aR+fixGap/2;
+        var realIdx=ai-realIndexOffset;var clampedIdx=Math.max(0,Math.min(numRails-1,realIdx));
+        fixerData.push({px:leftFixX,py:fixH,pz:leftZ,sign:+1,fixIdx:clampedIdx,lastAngle:0});
+        fixerData.push({px:rightFixX,py:fixH,pz:leftZ,sign:+1,fixIdx:clampedIdx,lastAngle:0});
+        fixerData.push({px:leftFixX,py:fixH,pz:rightZ,sign:-1,fixIdx:clampedIdx,lastAngle:0});
+        fixerData.push({px:rightFixX,py:fixH,pz:rightZ,sign:-1,fixIdx:clampedIdx,lastAngle:0});
+      }
+    }
+    fixerInstMesh=new THREE.InstancedMesh(fixerGeoShared,M.steel,fixerData.length);
+    fixerInstMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);fixerInstMesh.frustumCulled=false;
+    for(var fi=0;fi<fixerData.length;fi++){var f=fixerData[fi];_fixDummy.position.set(f.px,f.py,f.pz);_fixDummy.rotation.set(0,0,0);_fixDummy.updateMatrix();fixerInstMesh.setMatrixAt(fi,_fixDummy.matrix);}
+    fixerInstMesh.instanceMatrix.needsUpdate=true;ceilingGroup.add(fixerInstMesh);
+    var hangersCount=Math.max(2,Math.round(totalW/hangerStep)+1);var hangerXStep=totalW/(hangersCount-1);
+    var rodGeo=new THREE.CylinderGeometry(rodR,rodR,rodH,10,1);var boltGeo=new THREE.CylinderGeometry(nutR,nutR,nutH,6);
+    var washerGeo=new THREE.CylinderGeometry(nutR*1.25,nutR*1.25,0.002,12);var anchorGeo=new THREE.CylinderGeometry(anchorR,anchorR*0.55,anchorH,10);
+    for(var cc=0;cc<numCarriers;cc++){var cz2=-stringerSpan/2+cc*actualStep;
+      for(var hi=0;hi<hangersCount;hi++){var hx=-totalW/2+hi*hangerXStep;
+        var rod=new THREE.Mesh(rodGeo,M.rod);rod.position.set(hx,carrierH+rodH/2,cz2);rod.updateMatrix();rod.matrixAutoUpdate=false;ceilingGroup.add(rod);
+        var wBot=new THREE.Mesh(washerGeo,M.bolt);wBot.position.set(hx,carrierH+0.002,cz2);wBot.updateMatrix();wBot.matrixAutoUpdate=false;ceilingGroup.add(wBot);
+        var bBot=new THREE.Mesh(boltGeo,M.bolt);bBot.position.set(hx,carrierH+0.002+nutH/2+0.001,cz2);bBot.updateMatrix();bBot.matrixAutoUpdate=false;ceilingGroup.add(bBot);
+        var bTop=new THREE.Mesh(boltGeo,M.bolt);bTop.position.set(hx,carrierH+rodH-nutH/2-0.002,cz2);bTop.updateMatrix();bTop.matrixAutoUpdate=false;ceilingGroup.add(bTop);
+        var anc=new THREE.Mesh(anchorGeo,M.brass);anc.position.set(hx,carrierH+rodH+anchorH/2-0.01,cz2);anc.updateMatrix();anc.matrixAutoUpdate=false;ceilingGroup.add(anc);
+      }
+    }
+    var slab=new THREE.Mesh(new THREE.BoxGeometry(carrierLength+0.5,0.03,railLength+0.5),M.slab);slab.position.set(0,carrierH+rodH+anchorH,0);slab.updateMatrix();slab.matrixAutoUpdate=false;ceilingGroup.add(slab);
+    var railGeo=makeRailProfileGeo(railW,railH,wallT,flange,railLength);var railBaseY=railTopY-railH;
+    capInHalfW=railW/2-wallT;capInHalfH=railH/2-wallT;capPlateT=capT;capFlapLen=capFlapLenLocal;capOffZBase=railLength/2;capRailH=railH;capRailBaseY=railBaseY;
+    var capFlapW=capInHalfW*2-2*capT;var capFlapH=capInHalfH*2-2*capT;
+    var plateGeo=new THREE.BoxGeometry(railW,railH,capT);var flapHGeo=new THREE.BoxGeometry(capFlapW,capT,capFlapLenLocal);var flapVGeo=new THREE.BoxGeometry(capT,capFlapH,capFlapLenLocal);
+    var capInstCount=numRails*2;
+    capPlateInst=new THREE.InstancedMesh(plateGeo,M.cap,capInstCount);
+    capTopInst=new THREE.InstancedMesh(flapHGeo,M.cap,capInstCount);
+    capBotInst=new THREE.InstancedMesh(flapHGeo,M.cap,capInstCount);
+    capLeftInst=new THREE.InstancedMesh(flapVGeo,M.cap,capInstCount);
+    capRightInst=new THREE.InstancedMesh(flapVGeo,M.cap,capInstCount);
+    var capInstMeshes=[capPlateInst,capTopInst,capBotInst,capLeftInst,capRightInst];
+    for(var cix=0;cix<capInstMeshes.length;cix++){capInstMeshes[cix].instanceMatrix.setUsage(THREE.DynamicDrawUsage);capInstMeshes[cix].frustumCulled=false;capInstMeshes[cix].visible=false;ceilingGroup.add(capInstMeshes[cix]);}
+    var N=numRails,invN=N>1?1/(N-1):0;var autoModeNow=(state.mode==='auto');var tCycleNow=autoModeNow?(animationTime%timeline.CYCLE):0;
+    for(var ri=0;ri<N;ri++){var x=railPositions[ri];var g=new THREE.Group();g.matrixAutoUpdate=false;
+      var railMesh=new THREE.Mesh(railGeo,M.rail);railMesh.matrixAutoUpdate=false;g.add(railMesh);
+      var rank=railOrder[ri];var dropInit=getInitDrop(ri,rank,tCycleNow,autoModeNow,invN);var initialY=railBaseY-dropInit*LIFT;
+      g.position.set(x,initialY,0);g.updateMatrix();g.userData={index:ri,baseY:railBaseY,lastY:initialY};ceilingGroup.add(g);rails.push(g);
+    }
+    ceilingGroup.updateMatrixWorld(true);updateCapInstances(0);
+    _lastCapFly=-999;
+    if(!cameraInitialized){setInitialCamera(totalW,railLength);cameraInitialized=true;}
+    else{camera.position.copy(savedCam);controls.target.copy(savedTarget);controls.update();}
+  }catch(err){showError('Ошибка построения: '+err.message);console.error(err);}
+}
+function updateCapInstances(flyOffset){
+  if(!capPlateInst)return;var N=rails.length;
+  for(var ri=0;ri<N;ri++){
+    var g=rails[ri],rx=railPositions[ri];var capCenterY=g.userData.lastY+capRailH/2;
+    var rightZ=capOffZBase+flyOffset,leftZ=-capOffZBase-flyOffset;var rIdx=ri*2,lIdx=ri*2+1;
+    setCapInst(capPlateInst,rIdx,rx,capCenterY,rightZ,0,0,0,capPlateT/2);
+    setCapInst(capTopInst,rIdx,rx,capCenterY,rightZ,0,0,capInHalfH-capPlateT/2,-capFlapLen/2);
+    setCapInst(capBotInst,rIdx,rx,capCenterY,rightZ,0,0,-capInHalfH+capPlateT/2,-capFlapLen/2);
+    setCapInst(capLeftInst,rIdx,rx,capCenterY,rightZ,0,-capInHalfW+capPlateT/2,0,-capFlapLen/2);
+    setCapInst(capRightInst,rIdx,rx,capCenterY,rightZ,0,capInHalfW-capPlateT/2,0,-capFlapLen/2);
+    setCapInst(capPlateInst,lIdx,rx,capCenterY,leftZ,Math.PI,0,0,capPlateT/2);
+    setCapInst(capTopInst,lIdx,rx,capCenterY,leftZ,Math.PI,0,capInHalfH-capPlateT/2,-capFlapLen/2);
+    setCapInst(capBotInst,lIdx,rx,capCenterY,leftZ,Math.PI,0,-capInHalfH+capPlateT/2,-capFlapLen/2);
+    setCapInst(capLeftInst,lIdx,rx,capCenterY,leftZ,Math.PI,-capInHalfW+capPlateT/2,0,-capFlapLen/2);
+    setCapInst(capRightInst,lIdx,rx,capCenterY,leftZ,Math.PI,capInHalfW-capPlateT/2,0,-capFlapLen/2);
+  }
+  capPlateInst.instanceMatrix.needsUpdate=true;capTopInst.instanceMatrix.needsUpdate=true;
+  capBotInst.instanceMatrix.needsUpdate=true;capLeftInst.instanceMatrix.needsUpdate=true;capRightInst.instanceMatrix.needsUpdate=true;
+}
+function setInitialCamera(totalW,railLength){
+  var diag=Math.sqrt(totalW*totalW+railLength*railLength);var boundingRadius=diag*0.55;
+  var halfFov=camera.fov*Math.PI/360;var dist=boundingRadius/Math.sin(halfFov)*1.05;
+  var elev=30*Math.PI/180,azim=45*Math.PI/180;
+  camera.position.set(dist*Math.cos(elev)*Math.cos(azim),dist*Math.sin(elev),dist*Math.cos(elev)*Math.sin(azim));
+  controls.target.set(0,0.0,0);controls.update();
+}
+function layoutMobileSliders(){
+  var isMobileNow=window.innerWidth<=600;
+  var ss=document.getElementById('ccSliderSections');var mb=document.getElementById('ccMobileSliders');var st=document.getElementById('ccSettings');
+  if(!ss||!mb||!st)return;
+  if(isMobileNow){if(ss.parentNode!==mb)mb.appendChild(ss);}
+  else{if(ss.parentNode!==st)st.insertBefore(ss,st.firstChild);}
+}
+
+/* ===== ПОДГОНКА ВЫСОТЫ ПО ВЬЮПОРТУ ===== */
+function fitToViewport(){
+  var container=document.getElementById('cubica-configurator');
+  if(!container)return;
+  var vh=window.innerHeight||document.documentElement.clientHeight||700;
+  var isMobile=window.innerWidth<=600;
+  var h;
+  if(isMobile){h=vh;}
+  else{h=Math.min(720,vh-24);if(h<420)h=420;}
+  container.style.height=h+'px';
+}
+function onResize(){
+  var container=document.getElementById('cubica-configurator');if(!container)return;
+  var W=container.clientWidth,H=container.clientHeight;if(!W||!H)return;
+  if(camera){camera.aspect=W/H;camera.updateProjectionMatrix();}
+  if(renderer)renderer.setSize(W,H,false);
+  resizeMiniRenderer();
+}
+function animate(){
+  requestAnimationFrame(animate);var now=performance.now()/1000;if(lastFrameTime===0)lastFrameTime=now;
+  var dt=now-lastFrameTime;lastFrameTime=now;if(dt>0.1)dt=0.1;if(isHidden)return;
+  try{
+    if(!animPaused)animationTime+=dt;var autoMode=(state.mode==='auto');
+    var tCycle=autoMode?(animationTime%timeline.CYCLE):0;
+    if(!autoMode)state.manualProgress+=(state.manualTarget-state.manualProgress)*Math.min(1,dt*5);
+    if(!animPaused){if(capProgress<capProgressTarget)capProgress=Math.min(capProgressTarget,capProgress+CAP_SPEED);else if(capProgress>capProgressTarget)capProgress=Math.max(capProgressTarget,capProgress-CAP_SPEED);}
+    var flyOffset=(1-capProgress)*CAP_FLY_MM*MM;var capOpacity=Math.max(0,Math.min(1,(capProgress-0.15)/0.7));var capVisible=capOpacity>0.01;
+    if(M&&M.cap&&M.cap.opacity!==capOpacity)M.cap.opacity=capOpacity;
+    if(capPlateInst){var cc=capPlateInst.visible!==capVisible;if(cc){capPlateInst.visible=capVisible;capTopInst.visible=capVisible;capBotInst.visible=capVisible;capLeftInst.visible=capVisible;capRightInst.visible=capVisible;}}
+
+    var N=rails.length,invN=N>1?1/(N-1):0;
+    if(_dropCache.length<N)_dropCache.length=N;
+    var railsMoved=false;
+    for(var i=0;i<N;i++){
+      var g=rails[i];var idx=g.userData.index;var rank=railOrder[idx];if(rank===undefined)rank=idx;
+      var drop;
+      if(autoMode){drop=dropForRank(tCycle,rank);}
+      else{var delayM=(rank*invN)*0.35;drop=Math.max(0,Math.min(1,(state.manualProgress-delayM)/Math.max(0.001,(1-delayM))));}
+      _dropCache[i]=drop;
+      var newY=g.userData.baseY-drop*LIFT;
+      if(Math.abs(newY-g.userData.lastY)>EPS_Y){g.position.y=newY;g.updateMatrix();g.userData.lastY=newY;railsMoved=true;}
+    }
+
+    if(fixerInstMesh){
+      var anyChanged=false;var fd=fixerData;
+      for(var fi=0;fi<fd.length;fi++){
+        var f=fd[fi];var fDrop=_dropCache[f.fixIdx];
+        if(fDrop===undefined)fDrop=0;
+        var fixerOpen=smoothstep(0.01,0.08,fDrop);var newAngle=f.sign*FIXER_MAX_ANGLE*fixerOpen;
+        if(Math.abs(newAngle-f.lastAngle)>EPS_ANGLE){
+          _fixDummy.position.set(f.px,f.py,f.pz);_fixDummy.rotation.set(newAngle,0,0);_fixDummy.updateMatrix();
+          fixerInstMesh.setMatrixAt(fi,_fixDummy.matrix);f.lastAngle=newAngle;anyChanged=true;
+        }
+      }
+      if(anyChanged)fixerInstMesh.instanceMatrix.needsUpdate=true;
+    }
+
+    if(capPlateInst&&capVisible){
+      var flyChanged=Math.abs(flyOffset-_lastCapFly)>0.0001;
+      if(railsMoved||flyChanged){updateCapInstances(flyOffset);_lastCapFly=flyOffset;}
+    }
+
+    controls.update();renderer.render(scene,camera);
+
+    if(miniAvailable&&miniRenderer&&miniScene&&miniCamera){
+      _miniAccum+=dt;
+      if(_miniAccum>=_MINI_FRAME_TIME){
+        var mDt=_miniAccum;_miniAccum=0;miniTime+=mDt;
+        var mState=miniStateAtTime(miniTime);
+        if(miniRailGroup)miniRailGroup.position.y=miniRailTopRestY-mState.drop*miniLift;
+        if(miniFixerL)miniFixerL.rotation.x=miniFixerL.userData.sign*FIXER_MAX_ANGLE*mState.fixerOpen;
+        if(miniFixerR)miniFixerR.rotation.x=miniFixerR.userData.sign*FIXER_MAX_ANGLE*mState.fixerOpen;
+        miniLabelTimer+=mDt;
+        if(miniLabelTimer>0.15&&miniLabelEl){miniLabelTimer=0;
+          if(miniLabelEl.textContent!==mState.text){miniLabelEl.textContent=mState.text;if(mState.text)miniLabelEl.classList.remove('empty');else miniLabelEl.classList.add('empty');}
+        }
+        try{miniRenderer.render(miniScene,miniCamera);}catch(e){miniAvailable=false;if(miniFrameEl)miniFrameEl.style.display='none';}
+      }
+    }
+  }catch(err){console.error(err);}
+}
+function bindUI(){
+  function scheduleRebuild(){if(rebuildTimer)clearTimeout(rebuildTimer);rebuildTimer=setTimeout(function(){rebuildTimer=null;build();},REBUILD_DEBOUNCE_MS);}
+  var settingsEl=document.getElementById('ccSettings');var toggleBtn=document.getElementById('ccSettingsToggle');var backdrop=document.getElementById('ccBackdrop');
+  function setSettingsOpen(open){if(open){settingsEl.classList.add('open');backdrop.classList.add('open');toggleBtn.textContent='✕ Закрыть';}else{settingsEl.classList.remove('open');backdrop.classList.remove('open');toggleBtn.textContent='⚙ Настройки';}}
+  toggleBtn.addEventListener('click',function(){setSettingsOpen(!settingsEl.classList.contains('open'));});
+  backdrop.addEventListener('click',function(){setSettingsOpen(false);});
+  var ws=document.getElementById('ccWidth'),wv=document.getElementById('ccWidthVal');
+  ws.addEventListener('input',function(){var v=+ws.value;wv.textContent=v+' мм';params.railW=v;scheduleRebuild();});
+  var hs=document.getElementById('ccHeight'),hv=document.getElementById('ccHeightVal');
+  hs.addEventListener('input',function(){var v=+hs.value;hv.textContent=v+' мм';params.railH=v;scheduleRebuild();});
+  var gs=document.getElementById('ccGap'),gv=document.getElementById('ccGapVal');
+  gs.addEventListener('input',function(){var v=+gs.value;gv.textContent=v+' мм';params.gap=v;scheduleRebuild();});
+  var capsBtn=document.getElementById('ccCapsBtn');capsBtn.addEventListener('click',function(){params.caps=!params.caps;capProgressTarget=params.caps?1:0;capsBtn.classList.toggle('active',params.caps);});
+  var pauseBtn=document.getElementById('ccPauseBtn');pauseBtn.addEventListener('click',function(){animPaused=!animPaused;pauseBtn.classList.toggle('paused',animPaused);pauseBtn.textContent=animPaused?'▶':'⏸';});
+
+  var colorBtns=document.querySelectorAll('#ccColorGrid .swatch');var woodBtns=document.querySelectorAll('#ccWoodGrid .swatch');
+  function clearAll(){for(var k=0;k<colorBtns.length;k++)colorBtns[k].classList.remove('active');for(var k=0;k<woodBtns.length;k++)woodBtns[k].classList.remove('active');}
+
+  for(var m=0;m<colorBtns.length;m++){
+    (function(btn){
+      btn.addEventListener('click',function(){
+        clearAll();btn.classList.add('active');
+        params.color=Number(btn.dataset.color);params.wood=null;
+        var lg=document.getElementById('ccLegendRail');
+        if(lg){lg.style.backgroundImage='none';lg.style.background='#'+params.color.toString(16).padStart(6,'0');}
+        updateRailMaterial();
+      });
+    })(colorBtns[m]);
+  }
+  for(var n=0;n<woodBtns.length;n++){
+    (function(btn){
+      btn.addEventListener('click',function(){
+        clearAll();btn.classList.add('active');
+        params.wood=btn.dataset.wood;
+        var lg=document.getElementById('ccLegendRail');
+        if(lg){
+          var p=WOOD_PROC[params.wood];
+          if(p){
+            var url=makeWoodSwatch(p.base,p.dark,p.opts);
+            lg.style.background='';lg.style.backgroundImage='url('+url+')';
+            lg.style.backgroundSize='cover';lg.style.backgroundPosition='center';
+          }
+        }
+        updateRailMaterial();
+      });
+    })(woodBtns[n]);
+  }
+  var animBtns=document.querySelectorAll('.anim-btn[data-mode]');
+  for(var q=0;q<animBtns.length;q++){(function(btn){btn.addEventListener('click',function(){for(var k=0;k<animBtns.length;k++)animBtns[k].classList.remove('active');btn.classList.add('active');state.mode=btn.dataset.mode;if(state.mode==='assemble'){state.manualTarget=0;if(state.manualProgress<0.05)state.manualProgress=0;}else if(state.mode==='disassemble'){state.manualTarget=1;}});})(animBtns[q]);}
+  document.getElementById('ccCamReset').addEventListener('click',function(){var railW=params.railW*MM,gap=params.gap*MM;var pitch=railW+gap;var numRails=Math.max(2,Math.min(MAX_RAILS,Math.round(TARGET_WIDTH_MM*MM/pitch)));var totalW=numRails*pitch-gap;var railLength=(STRINGER_SPAN_MM+2*RAIL_OVERHANG_MM)*MM;setInitialCamera(totalW,railLength);});
+}
+function init(){
+  var container=document.getElementById('cubica-configurator');if(!container){showError('Ошибка 3D: контейнер #cubica-configurator не найден');return;}
+  fitToViewport();
+  var W=container.clientWidth||800;var H=container.clientHeight||600;
+  scene=new THREE.Scene();scene.background=new THREE.Color(0xdde4ec);
+  camera=new THREE.PerspectiveCamera(36,W/H,0.01,300);camera.position.set(3,2,4);
+  renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+  renderer.setSize(W,H,false);renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.domElement.style.width='100%';renderer.domElement.style.height='100%';
+  container.appendChild(renderer.domElement);
+  controls=new THREE.OrbitControls(camera,renderer.domElement);controls.target.set(0,0.0,0);
+  controls.enableDamping=true;controls.dampingFactor=0.12;controls.minDistance=1.0;controls.maxDistance=60;
+  controls.minPolarAngle=0.10;controls.maxPolarAngle=Math.PI*0.97;controls.enablePan=false;
+  controls.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};
+  scene.add(new THREE.HemisphereLight(0xffffff,0x8d99a6,1.05));
+  var key=new THREE.DirectionalLight(0xffffff,0.85);key.position.set(6,10,5);scene.add(key);
+  var fill=new THREE.DirectionalLight(0xffffff,0.32);fill.position.set(-8,4,-6);scene.add(fill);
+  var low=new THREE.DirectionalLight(0xffffff,0.55);low.position.set(0,-8,3);scene.add(low);
+  var rim=new THREE.DirectionalLight(0xffffff,0.30);rim.position.set(0,2,8);scene.add(rim);
+  buildWoodTextures();
+  M=makeMaterials();
+  updateRailMaterial();
+  applySwatchBackgrounds();
+  build();
+  bindUI();
+  layoutMobileSliders();
+  var loading=document.getElementById('ccLoading');if(loading)loading.classList.add('hidden');
+  setTimeout(function(){fitToViewport();onResize();},60);
+  if(W===0||H===0)setTimeout(function(){fitToViewport();onResize();},200);
+  if(window.ResizeObserver){new ResizeObserver(function(){fitToViewport();onResize();}).observe(container);}
+  window.addEventListener('resize',function(){fitToViewport();onResize();layoutMobileSliders();});
+  window.addEventListener('orientationchange',function(){setTimeout(function(){fitToViewport();onResize();layoutMobileSliders();},280);});
+  document.addEventListener('visibilitychange',function(){isHidden=document.hidden;});
+  miniFrameEl=document.getElementById('ccMiniFrame');miniLabelEl=document.getElementById('ccMiniLabel');
+  try{buildMiniScene();setTimeout(function(){try{miniAvailable=initMiniRenderer();}catch(e){miniAvailable=false;if(miniFrameEl)miniFrameEl.style.display='none';}},100);}
+  catch(e){miniAvailable=false;if(miniFrameEl)miniFrameEl.style.display='none';}
+  lastFrameTime=performance.now()/1000;animate();
+}
+function start(){try{init();}catch(e){showError('Ошибка 3D: '+(e.message||e));console.error(e);}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start);}else{start();}
+
+})();
+</script>
